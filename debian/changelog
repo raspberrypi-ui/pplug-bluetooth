@@ -1,3 +1,9 @@
+pplug-bluetooth (0.38) bookworm; urgency=medium
+
+  * Set initial state of icon correctly
+
+ -- Simon Long <simon@raspberrypi.com>  Mon, 07 Apr 2025 14:10:28 +0100
+
 pplug-bluetooth (0.37) bookworm; urgency=medium
 
   * First hybrid package version

@@ -1,5 +1,5 @@
 /*============================================================================
-Copyright (c) 2018-2025 Raspberry Pi Holdings Ltd.
+Copyright (c) 2018-2025 Raspberry Pi
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -2183,9 +2183,6 @@ void bt_init (BluetoothPlugin *bt)
 
     /* Set up callbacks to see if BlueZ is on DBus */
     bt->watch = g_bus_watch_name (G_BUS_TYPE_SYSTEM, "org.bluez", 0, cb_name_owned, cb_name_unowned, bt, NULL);
-
-    /* Show the widget and return */
-    gtk_widget_show_all (bt->plugin);
 }
 
 void bt_destructor (gpointer user_data)
