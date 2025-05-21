@@ -33,18 +33,9 @@ extern "C" {
     WayfireWidget *create () { return new WayfireBluetooth; }
     void destroy (WayfireWidget *w) { delete w; }
 
-    static constexpr conf_table_t conf_table[1] = {
-        {CONF_NONE, NULL, NULL}
-    };
     const conf_table_t *config_params (void) { return conf_table; };
-    const char *display_name (void) { return N_("Bluetooth"); };
+    const char *display_name (void) { return N_(PLUGIN_TITLE); };
     const char *package_name (void) { return GETTEXT_PACKAGE; };
-}
-
-void WayfireBluetooth::bar_pos_changed_cb (void)
-{
-    if ((std::string) bar_pos == "bottom") bt->bottom = TRUE;
-    else bt->bottom = FALSE;
 }
 
 void WayfireBluetooth::icon_size_changed_cb (void)
@@ -76,7 +67,6 @@ void WayfireBluetooth::init (Gtk::HBox *container)
     bt->plugin = (GtkWidget *)((*plugin).gobj());
     bt->icon_size = icon_size;
     icon_timer = Glib::signal_idle().connect (sigc::mem_fun (*this, &WayfireBluetooth::set_icon));
-    bar_pos_changed_cb ();
 
     /* Add long press for right click */
     gesture = add_longpress_default (*plugin);
@@ -86,7 +76,6 @@ void WayfireBluetooth::init (Gtk::HBox *container)
 
     /* Setup callbacks */
     icon_size.set_callback (sigc::mem_fun (*this, &WayfireBluetooth::icon_size_changed_cb));
-    bar_pos.set_callback (sigc::mem_fun (*this, &WayfireBluetooth::bar_pos_changed_cb));
 }
 
 WayfireBluetooth::~WayfireBluetooth()

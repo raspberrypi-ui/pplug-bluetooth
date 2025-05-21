@@ -92,6 +92,10 @@ typedef enum {
 /* Global data                                                                */
 /*----------------------------------------------------------------------------*/
 
+conf_table_t conf_table[1] = {
+    {CONF_TYPE_NONE, NULL, NULL, NULL}
+};
+
 /* Name table for cached icons */
 
 const gchar *icon_names[ICON_CACHE_SIZE] =
@@ -2247,7 +2251,7 @@ FM_DEFINE_MODULE (lxpanel_gtk, bluetooth)
 
 /* Plugin descriptor */
 LXPanelPluginInit fm_module_init_lxpanel_gtk = {
-    .name = N_("Bluetooth"),
+    .name = N_(PLUGIN_TITLE),
     .description = N_("Manages Bluetooth devices"),
     .new_instance = bluetooth_constructor,
     .reconfigure = bluetooth_configuration_changed,

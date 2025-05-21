@@ -29,6 +29,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* Typedefs and macros                                                        */
 /*----------------------------------------------------------------------------*/
 
+#define PLUGIN_TITLE "Bluetooth"
+
 #define ICON_CACHE_SIZE 14
 
 typedef struct 
@@ -40,7 +42,6 @@ typedef struct
     config_setting_t *settings;     /* Plugin settings */
 #else
     int icon_size;                  /* Variables used under wf-panel */
-    gboolean bottom;
 #endif
 
     GtkWidget *tray_icon;           /* Displayed image */
@@ -73,6 +74,8 @@ typedef struct
     gboolean rfkill;
     gboolean wizard;
 } BluetoothPlugin;
+
+extern conf_table_t conf_table[1];
 
 /*----------------------------------------------------------------------------*/
 /* Prototypes                                                                 */

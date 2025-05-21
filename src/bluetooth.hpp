@@ -43,7 +43,6 @@ class WayfireBluetooth : public WayfireWidget
     Glib::RefPtr<Gtk::GestureLongPress> gesture;
 
     WfOption <int> icon_size {"panel/icon_size"};
-    WfOption <std::string> bar_pos {"panel/position"};
     sigc::connection icon_timer;
 
     /* plugin */
@@ -55,7 +54,6 @@ class WayfireBluetooth : public WayfireWidget
     void command (const char *cmd) override;
     virtual ~WayfireBluetooth ();
     void icon_size_changed_cb (void);
-    void bar_pos_changed_cb (void);
     bool set_icon (void);
 };
 
