@@ -38,12 +38,6 @@ extern "C" {
     const char *package_name (void) { return GETTEXT_PACKAGE; };
 }
 
-void WayfireBluetooth::icon_size_changed_cb (void)
-{
-    bt->icon_size = icon_size;
-    bt_update_display (bt);
-}
-
 void WayfireBluetooth::command (const char *cmd)
 {
     bt_control_msg (bt, cmd);
@@ -65,7 +59,6 @@ void WayfireBluetooth::init (Gtk::HBox *container)
     /* Setup structure */
     bt = g_new0 (BluetoothPlugin, 1);
     bt->plugin = (GtkWidget *)((*plugin).gobj());
-    bt->icon_size = icon_size;
     icon_timer = Glib::signal_idle().connect (sigc::mem_fun (*this, &WayfireBluetooth::set_icon));
 
     /* Add long press for right click */
@@ -73,9 +66,6 @@ void WayfireBluetooth::init (Gtk::HBox *container)
 
     /* Initialise the plugin */
     bt_init (bt);
-
-    /* Setup callbacks */
-    icon_size.set_callback (sigc::mem_fun (*this, &WayfireBluetooth::icon_size_changed_cb));
 }
 
 WayfireBluetooth::~WayfireBluetooth()

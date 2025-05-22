@@ -40,8 +40,6 @@ typedef struct
 #ifdef LXPLUG
     LXPanel *panel;                 /* Back pointer to panel */
     config_setting_t *settings;     /* Plugin settings */
-#else
-    int icon_size;                  /* Variables used under wf-panel */
 #endif
 
     GtkWidget *tray_icon;           /* Displayed image */
