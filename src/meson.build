@@ -25,7 +25,7 @@ wsources = files(
 
 wdeps = [ gtkmm, wfpanel ]
 
-wargs = [ '-DPLUGIN_NAME="' + meson.project_name() + '"', '-DPACKAGE_DATA_DIR="' + wresource_dir + '"', '-DGETTEXT_PACKAGE="wfplug_' + meson.project_name() +'"' ]
+wargs = [ '-DPACKAGE_DATA_DIR="' + wresource_dir + '"', '-DGETTEXT_PACKAGE="wfplug_' + meson.project_name() +'"' ]
 
 shared_module('lib' + meson.project_name(), [ lsources, wsources ],
         dependencies: wdeps,

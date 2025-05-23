@@ -34,7 +34,7 @@ extern "C" {
     void destroy (WayfireWidget *w) { delete w; }
 
     const conf_table_t *config_params (void) { return conf_table; };
-    const char *display_name (void) { return N_(PLUGIN_TITLE); };
+    const char *display_name (void) { return PLUGIN_TITLE; };
     const char *package_name (void) { return GETTEXT_PACKAGE; };
 }
 

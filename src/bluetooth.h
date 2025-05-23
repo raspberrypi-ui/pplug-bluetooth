@@ -29,7 +29,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* Typedefs and macros                                                        */
 /*----------------------------------------------------------------------------*/
 
-#define PLUGIN_TITLE "Bluetooth"
+#define PLUGIN_TITLE N_("Bluetooth")
 
 #define ICON_CACHE_SIZE 14
 
