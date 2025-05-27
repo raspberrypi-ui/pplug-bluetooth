@@ -1,3 +1,9 @@
+pplug-bluetooth (0.39) trixie; urgency=medium
+
+  * Modify for lxpanel-pi
+
+ -- Simon Long <simon@raspberrypi.com>  Tue, 27 May 2025 07:32:05 +0100
+
 pplug-bluetooth (0.38) bookworm; urgency=medium
 
   * Set initial state of icon correctly
