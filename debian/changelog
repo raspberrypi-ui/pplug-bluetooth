@@ -1,4 +1,4 @@
-pplug-bluetooth (0.39) trixie; urgency=medium
+pplug-bluetooth (1.0) trixie; urgency=medium
 
   * Modify for lxpanel-pi
 
