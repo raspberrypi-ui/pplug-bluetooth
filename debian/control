@@ -29,5 +29,5 @@ Description: Bluetooth plugin for wf-panel-pi
 Package: pplug-bluetooth-data
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
-Description: Bluetooth plugin for lxpanel - data
+Description: Bluetooth plugin - data
  Data for Bluetooth plugin
