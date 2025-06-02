@@ -299,13 +299,13 @@ static void toggle_bt (GtkWidget *, gpointer user_data)
         system ("/usr/sbin/rfkill block bluetooth");
         if (bt->flash_timer) g_source_remove (bt->flash_timer);
         bt->flash_timer = 0;
-        wrap_set_taskbar_icon (bt, bt->tray_icon, "preferences-system-bluetooth-inactive");
+        wrap_set_taskbar_icon (bt, bt->tray_icon, "bluetooth-inactive");
     }
     else
     {
         system ("/usr/sbin/rfkill unblock bluetooth");
         set_powered (bt, TRUE);
-        wrap_set_taskbar_icon (bt, bt->tray_icon, "preferences-system-bluetooth");
+        wrap_set_taskbar_icon (bt, bt->tray_icon, "bluetooth");
     }
 }
 
@@ -690,7 +690,7 @@ static void cb_interface_properties (GDBusObjectManagerClient *, GDBusObjectProx
         if (g_variant_get_boolean (var) == FALSE)
         {
             bt->flash_timer = 0;
-            wrap_set_taskbar_icon (bt, bt->tray_icon, "preferences-system-bluetooth");
+            wrap_set_taskbar_icon (bt, bt->tray_icon, "bluetooth");
         }
         else bt->flash_timer = g_timeout_add (500, flash_icon, bt);
 
@@ -1736,7 +1736,7 @@ static gboolean flash_icon (gpointer user_data)
     BluetoothPlugin *bt = (BluetoothPlugin *) user_data;
 
     if (bt->flash_timer == 0) return FALSE;
-    wrap_set_taskbar_icon (bt, bt->tray_icon, bt->flash_state ? "preferences-system-bluetooth-active" : "preferences-system-bluetooth");
+    wrap_set_taskbar_icon (bt, bt->tray_icon, bt->flash_state ? "bluetooth-active" : "bluetooth");
     bt->flash_state ^= 1;
     return TRUE;
 }
@@ -1756,7 +1756,7 @@ static void handle_menu_discover (GtkWidget *, gpointer user_data)
         set_discoverable (bt, FALSE);
         if (bt->flash_timer) g_source_remove (bt->flash_timer);
         bt->flash_timer = 0;
-        wrap_set_taskbar_icon (bt, bt->tray_icon, "preferences-system-bluetooth");
+        wrap_set_taskbar_icon (bt, bt->tray_icon, "bluetooth");
     }
 }
 
@@ -2083,10 +2083,10 @@ static void update_icon (BluetoothPlugin *bt)
         gtk_widget_set_sensitive (bt->plugin, FALSE);
         return;
     }
-    if (bt_state == 0) wrap_set_taskbar_icon (bt, bt->tray_icon, "preferences-system-bluetooth-inactive");
+    if (bt_state == 0) wrap_set_taskbar_icon (bt, bt->tray_icon, "bluetooth-inactive");
     else
     {
-        wrap_set_taskbar_icon (bt, bt->tray_icon, "preferences-system-bluetooth");
+        wrap_set_taskbar_icon (bt, bt->tray_icon, "bluetooth");
         if (is_discoverable (bt) && !bt->flash_timer) bt->flash_timer = g_timeout_add (500, flash_icon, bt);
     }
     gtk_widget_show_all (bt->plugin);
@@ -2145,7 +2145,7 @@ void bt_init (BluetoothPlugin *bt)
     /* Allocate icon as a child of top level */
     bt->tray_icon = gtk_image_new ();
     gtk_container_add (GTK_CONTAINER (bt->plugin), bt->tray_icon);
-    wrap_set_taskbar_icon (bt, bt->tray_icon, "preferences-system-bluetooth-inactive");
+    wrap_set_taskbar_icon (bt, bt->tray_icon, "bluetooth-inactive");
     if (!bt->wizard) gtk_widget_set_tooltip_text (bt->tray_icon, _("Manage Bluetooth devices"));
 
     /* Set up button */
