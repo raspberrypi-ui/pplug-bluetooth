@@ -690,7 +690,7 @@ static void cb_interface_properties (GDBusObjectManagerClient *, GDBusObjectProx
         if (g_variant_get_boolean (var) == FALSE)
         {
             bt->flash_timer = 0;
-            wrap_set_taskbar_icon (bt, bt->tray_icon, "bluetooth");
+            wrap_set_taskbar_icon (bt, bt->tray_icon, bt_enabled (bt) ? "bluetooth" : "bluetooth-inactive");
         }
         else bt->flash_timer = g_timeout_add (500, flash_icon, bt);
 
