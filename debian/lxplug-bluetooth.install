@@ -1,3 +1,0 @@
-usr/lib/${DEB_HOST_MULTIARCH}/lxpanel-pi/bluetooth.so
-usr/share/lxpanel-pi/ui/lxplug-bluetooth.ui
-usr/share/locale/*/LC_MESSAGES/lpplug_bluetooth.mo
