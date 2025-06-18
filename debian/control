@@ -10,13 +10,13 @@ Build-Depends:
 Standards-Version: 4.5.1
 Homepage: http://raspberrypi.com/
 
-Package: lxplug-bluetooth
+Package: lpplug-bluetooth
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
  lxpanel-pi
 Recommends: pulseaudio-module-bluetooth | bluealsa, pi-bluetooth
-Description: Bluetooth plugin for lxpanel
- Plugin for lxpanel to control pairing and connection of Bluetooth devices.
+Description: Bluetooth plugin for lxpanel-pi
+ Plugin for lxpanel-pi to control pairing and connection of Bluetooth devices.
 
 Package: wfplug-bluetooth
 Architecture: any
