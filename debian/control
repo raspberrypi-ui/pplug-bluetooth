@@ -14,7 +14,7 @@ Package: lpplug-bluetooth
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
  lxpanel-pi
-Recommends: pulseaudio-module-bluetooth | bluealsa, pi-bluetooth
+Recommends: pulseaudio-module-bluetooth | bluealsa
 Description: Bluetooth plugin for lxpanel-pi
  Plugin for lxpanel-pi to control pairing and connection of Bluetooth devices.
 
@@ -22,6 +22,6 @@ Package: wfplug-bluetooth
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
  wf-panel-pi (>=1.0)
-Recommends: pulseaudio-module-bluetooth | bluealsa, pi-bluetooth
+Recommends: pulseaudio-module-bluetooth | bluealsa
 Description: Bluetooth plugin for wf-panel-pi
  Plugin for wf-panel-pi to control pairing and connection of Bluetooth devices.
