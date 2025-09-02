@@ -1,3 +1,9 @@
+pplug-bluetooth (1.2) trixie; urgency=medium
+
+  * Add Chinese translation
+
+ -- Simon Long <simon@raspberrypi.com>  Tue, 02 Sep 2025 08:59:36 +0100
+
 pplug-bluetooth (1.1) trixie; urgency=medium
 
   * Remove pi-bluetooth dependency
