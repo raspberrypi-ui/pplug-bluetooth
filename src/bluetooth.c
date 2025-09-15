@@ -2122,7 +2122,7 @@ gboolean bt_control_msg (BluetoothPlugin *bt, const char *cmd)
 
     if (!g_strcmp0 (cmd, "menu"))
     {
-        if (bt->menu && gtk_widget_get_visible (bt->menu)) gtk_widget_hide (bt->menu);
+        if (bt->menu && gtk_widget_get_visible (bt->menu)) gtk_menu_popdown (GTK_MENU (bt->menu));
         else
         {
             show_menu (bt);
