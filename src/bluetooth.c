@@ -1539,6 +1539,10 @@ static void show_list_dialog (BluetoothPlugin *bt)
     gtk_widget_set_sensitive (bt->list_ok, FALSE);
 
     rend = gtk_cell_renderer_pixbuf_new ();
+    GValue val = G_VALUE_INIT;
+    g_value_init (&val, G_TYPE_INT);
+    g_value_set_int (&val, gtk_widget_get_scale_factor (bt->plugin));
+    g_object_set_property (G_OBJECT (rend), "scale", &val);
     gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (bt->list), -1, "Icon", rend, "pixbuf", 5, NULL);
     gtk_tree_view_column_set_fixed_width (gtk_tree_view_get_column (GTK_TREE_VIEW (bt->list), 0), 50);
     rend = gtk_cell_renderer_text_new ();
@@ -1958,7 +1962,7 @@ static void init_icon_cache (BluetoothPlugin *bt)
 
     for (i = 0; i < ICON_CACHE_SIZE; i++)
     {
-        bt->icon_ref[i] = gtk_icon_theme_load_icon (gtk_icon_theme_get_default (), icon_names[i], 32, 0, NULL);
+        bt->icon_ref[i] = gtk_icon_theme_load_icon_for_scale (gtk_icon_theme_get_default (), icon_names[i], 32, gtk_widget_get_scale_factor (bt->plugin), GTK_ICON_LOOKUP_FORCE_SIZE, NULL);
     }
 }
 
