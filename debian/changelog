@@ -1,3 +1,9 @@
+pplug-bluetooth (1.6) trixie; urgency=medium
+
+  * Hide plugin on devices with no BT hardware
+
+ -- Simon Long <simon@raspberrypi.com>  Wed, 26 Nov 2025 08:18:30 +0000
+
 pplug-bluetooth (1.5) trixie; urgency=medium
 
   * Add support for scaling for HiDPI

@@ -2069,7 +2069,13 @@ static void show_menu (BluetoothPlugin *bt)
 static void update_icon (BluetoothPlugin *bt)
 {
     int bt_state;
-    if (!bt->objmanager) return;
+
+    if (!bt->objmanager)
+    {
+        gtk_widget_hide (bt->plugin);
+        gtk_widget_set_sensitive (bt->plugin, FALSE);
+        return;
+    }
 
     bt_state = bt_enabled (bt);
     bt_state = bt_enabled (bt);   // not a bug - poll a few times to allow to settle...
