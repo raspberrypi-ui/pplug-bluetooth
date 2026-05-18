@@ -1,0 +1,224 @@
+# Polish translations for plugin package
+# Copyright (C) 2026 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the wf-panel-pi package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-17 14:20+0200\n"
+"PO-Revision-Date: 2026-04-17 18:05+0200\n"
+"Last-Translator: Skotniczny <skotniczny@outlook.com>\n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#: ../src/bluetooth.c:1306
+#, c-format
+msgid "Pairing request sent to '%s' - waiting for response..."
+msgstr "Żądanie sparowania wysłane do „%s” – oczekiwanie na odpowiedź…"
+
+#: ../src/bluetooth.c:1315
+#, c-format
+msgid "Pairing failed - %s"
+msgstr "Sparowanie nie powiodło się – %s"
+
+#: ../src/bluetooth.c:1323
+#, c-format
+msgid "Pairing successful - connecting..."
+msgstr "Sparowanie udane – nawiązywanie połączenia…"
+
+#: ../src/bluetooth.c:1331
+#, c-format
+msgid "Connection successful"
+msgstr "Połączenie nawiązane pomyślnie"
+
+#: ../src/bluetooth.c:1339 ../src/bluetooth.c:1602
+#, c-format
+msgid "Connection failed - %s"
+msgstr "Połączenie nie powiodło się – %s"
+
+#: ../src/bluetooth.c:1347
+#, c-format
+msgid "Please enter code '%s' on '%s'"
+msgstr "Proszę wprowadzić kod „%s” na „%s”"
+
+#: ../src/bluetooth.c:1355
+#, c-format
+msgid "Please confirm that '%s' is showing the code '%s' to pair"
+msgstr "Proszę potwierdzić, że „%s” wyświetla kod „%s” do sparowania"
+
+#: ../src/bluetooth.c:1363
+#, c-format
+msgid "Please enter PIN code shown on '%s'"
+msgstr "Proszę wprowadzić kod PIN wyświetlony na „%s”"
+
+#: ../src/bluetooth.c:1371
+#, c-format
+msgid "Please enter passcode shown on '%s'"
+msgstr "Proszę wprowadzić kod dostępu wyświetlony na „%s”"
+
+#: ../src/bluetooth.c:1379
+#, c-format
+msgid "Waiting for response from Bluetooth device..."
+msgstr "Oczekiwanie na odpowiedź z urządzenia Bluetooth…"
+
+#: ../src/bluetooth.c:1387
+#, c-format
+msgid "'%s' has requested a pairing. Do you accept the request?"
+msgstr "„%s” zażądał sparowania. Czy zaakceptujesz żądanie?"
+
+#: ../src/bluetooth.c:1395
+#, c-format
+msgid ""
+"Pairing successful - right-click the volume icon to select as audio device"
+msgstr ""
+"Sparowanie udane – kliknij prawym przyciskiem myszy na ikonę głośności, aby "
+"wybrać jako urządzenie audio"
+
+#: ../src/bluetooth.c:1403
+#, c-format
+msgid ""
+"Pairing successful - this device has no services which can be used with "
+"Raspberry Pi"
+msgstr ""
+"Sparowanie udane – to urządzenie nie ma usług, które mogą być używane z "
+"Raspberry Pi"
+
+#: ../src/bluetooth.c:1582
+#, c-format
+msgid "Removing..."
+msgstr "Usuwanie…"
+
+#: ../src/bluetooth.c:1586
+#, c-format
+msgid "Do you want to unpair '%s'?"
+msgstr "Czy chcesz anulować sparowanie z „%s”?"
+
+#: ../src/bluetooth.c:1589
+#, c-format
+msgid "Removing pairing with '%s'..."
+msgstr "Usuwanie sparowania z „%s”…"
+
+#: ../src/bluetooth.c:1592
+#, c-format
+msgid "Removal failed - %s"
+msgstr "Usunięcie nie powiodło się – %s"
+
+#: ../src/bluetooth.c:1601
+#, c-format
+msgid "Connecting..."
+msgstr "Łączenie…"
+
+#: ../src/bluetooth.c:1602
+#, c-format
+msgid "Connecting to '%s'..."
+msgstr "Łączenie z „%s”…"
+
+#: ../src/bluetooth.c:1606
+#, c-format
+msgid "Disconnecting..."
+msgstr "Rozłączanie…"
+
+#: ../src/bluetooth.c:1607
+#, c-format
+msgid "Disconnecting from '%s'..."
+msgstr "Rozłączanie z „%s”…"
+
+#: ../src/bluetooth.c:1607
+#, c-format
+msgid "Disconnection failed - %s"
+msgstr "Rozłączenie nie powiodło się – %s"
+
+#: ../src/bluetooth.c:1722
+msgid "No usable services on this device"
+msgstr "Brak dostępnych usług na tym urządzeniu"
+
+#: ../src/bluetooth.c:1787
+msgid "Disconnect..."
+msgstr "Rozłącz…"
+
+#: ../src/bluetooth.c:1792
+msgid "Connect..."
+msgstr "Połącz…"
+
+#. add the remove option to the submenu
+#: ../src/bluetooth.c:1805
+msgid "Remove..."
+msgstr "Usuń…"
+
+#. warn if no BT hardware detected
+#: ../src/bluetooth.c:2001
+msgid "No Bluetooth adapter found"
+msgstr "Nie znaleziono adaptera Bluetooth"
+
+#. add enable bt option
+#: ../src/bluetooth.c:2008
+msgid "Turn On Bluetooth"
+msgstr "Włącz Bluetooth"
+
+#. add disable bt option
+#: ../src/bluetooth.c:2018
+msgid "Turn Off Bluetooth"
+msgstr "Wyłącz Bluetooth"
+
+#: ../src/bluetooth.c:2028
+msgid "Stop Discoverable"
+msgstr "Wyłącz widoczność"
+
+#: ../src/bluetooth.c:2030
+msgid "Make Discoverable"
+msgstr "Włącz widoczność"
+
+#. add and remove dialogs
+#: ../src/bluetooth.c:2038
+msgid "Add Device..."
+msgstr "Dodaj urządzenie…"
+
+#: ../src/bluetooth.c:2159
+msgid "Manage Bluetooth devices"
+msgstr "Zarządzaj urządzeniami Bluetooth"
+
+#: ../src/bluetooth.c:2266
+msgid "Manages Bluetooth devices"
+msgstr "Zarządza urządzeniami Bluetooth"
+
+#. End of file
+#. ----------------------------------------------------------------------------
+#: ../src/bluetooth.h:32
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#. End of file
+#. ----------------------------------------------------------------------------
+#: ../data/lxplug-bluetooth.ui.h:1
+msgid "Add New Device"
+msgstr "Dodaj nowe urządzenie"
+
+#: ../data/lxplug-bluetooth.ui.h:2
+msgid "_Cancel"
+msgstr "_Anuluj"
+
+#: ../data/lxplug-bluetooth.ui.h:3
+msgid "_Pair"
+msgstr "_Sparuj"
+
+#: ../data/lxplug-bluetooth.ui.h:4
+msgid "Searching for Bluetooth devices..."
+msgstr "Wyszukiwanie urządzeń Bluetooth…"
+
+#: ../data/lxplug-bluetooth.ui.h:5
+msgid "label"
+msgstr ""
+
+#: ../data/lxplug-bluetooth.ui.h:6
+msgid "_OK"
+msgstr "_OK"
+
+#: ../data/lxplug-bluetooth.ui.h:7
+msgid "Pairing..."
+msgstr "Parowanie…"
