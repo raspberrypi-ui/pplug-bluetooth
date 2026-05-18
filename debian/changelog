@@ -1,3 +1,9 @@
+pplug-bluetooth (1.8) trixie; urgency=medium
+
+  * Add Polish translation 
+
+ -- Simon Long <simon@raspberrypi.com>  Mon, 18 May 2026 11:37:03 +0100
+
 pplug-bluetooth (1.7) trixie; urgency=medium
 
   * Rebuild against latest APIs
