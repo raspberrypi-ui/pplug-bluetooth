@@ -26,7 +26,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ============================================================================*/
 
 #include <glibmm.h>
-#include "gtk-utils.hpp"
 #include "bluetooth.hpp"
 
 extern "C" {
@@ -60,9 +59,6 @@ void WayfireBluetooth::init (Gtk::HBox *container)
     bt = g_new0 (BluetoothPlugin, 1);
     bt->plugin = (GtkWidget *)((*plugin).gobj());
     icon_timer = Glib::signal_idle().connect (sigc::mem_fun (*this, &WayfireBluetooth::set_icon));
-
-    /* Add long press for right click */
-    gesture = add_longpress_default (*plugin);
 
     /* Initialise the plugin */
     bt_init (bt);

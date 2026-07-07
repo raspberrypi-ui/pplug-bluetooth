@@ -2162,6 +2162,7 @@ void bt_init (BluetoothPlugin *bt)
     gtk_button_set_relief (GTK_BUTTON (bt->plugin), GTK_RELIEF_NONE);
 #ifndef LXPLUG
     g_signal_connect (bt->plugin, "clicked", G_CALLBACK (bluetooth_button_clicked), bt);
+    add_long_press (bt->plugin, NULL, NULL);
 #endif
 
     /* Set up variables */
