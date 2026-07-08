@@ -21,7 +21,7 @@ Description: Bluetooth plugin for lxpanel-pi
 Package: wfplug-bluetooth
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends},
- wf-panel-pi (>=1.10)
+ wf-panel-pi (>=1.18)
 Recommends: pulseaudio-module-bluetooth | bluealsa
 Description: Bluetooth plugin for wf-panel-pi
  Plugin for wf-panel-pi to control pairing and connection of Bluetooth devices.

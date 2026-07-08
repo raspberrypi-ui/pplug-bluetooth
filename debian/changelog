@@ -1,3 +1,9 @@
+pplug-bluetooth (1.9) trixie; urgency=medium
+
+  * New XML
+
+ -- Simon Long <simon@raspberrypi.com>  Wed, 08 Jul 2026 13:53:52 +0100
+
 pplug-bluetooth (1.8) trixie; urgency=medium
 
   * Add Polish translation 
