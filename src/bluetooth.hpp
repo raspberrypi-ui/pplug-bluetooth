@@ -36,7 +36,7 @@ extern "C" {
 #include "bluetooth.h"
 }
 
-class WayfireBluetooth : public WayfireWidget
+class WidgetBluetooth : public PanelWidget
 {
     std::unique_ptr <Gtk::Button> plugin;
 
@@ -49,7 +49,7 @@ class WayfireBluetooth : public WayfireWidget
 
     void init (Gtk::HBox *container) override;
     void command (const char *cmd) override;
-    virtual ~WayfireBluetooth ();
+    virtual ~WidgetBluetooth ();
     bool set_icon (void);
 };
 
