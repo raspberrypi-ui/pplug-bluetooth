@@ -93,7 +93,7 @@ typedef enum {
 /*----------------------------------------------------------------------------*/
 
 conf_table_t conf_table[1] = {
-    {CONF_TYPE_NONE, NULL, NULL, NULL}
+    {CONF_TYPE_NONE, NULL, NULL, NULL, NULL}
 };
 
 /* Name table for cached icons */

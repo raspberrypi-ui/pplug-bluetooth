@@ -1,3 +1,9 @@
+pplug-bluetooth (1.10) trixie; urgency=medium
+
+  * Remove WfOptions
+
+ -- Simon Long <simon@raspberrypi.com>  Tue, 04 Aug 2026 13:30:36 +0100
+
 pplug-bluetooth (1.9) trixie; urgency=medium
 
   * New XML

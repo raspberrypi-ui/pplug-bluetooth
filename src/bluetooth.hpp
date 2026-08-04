@@ -38,18 +38,16 @@ extern "C" {
 
 class WidgetBluetooth : public PanelWidget
 {
-    std::unique_ptr <Gtk::Button> plugin;
-
-    sigc::connection icon_timer;
-
-    /* plugin */
     BluetoothPlugin *bt;
+
+    std::unique_ptr <Gtk::Button> plugin;
+    sigc::connection icon_timer;
 
   public:
 
     void init (Gtk::HBox *container) override;
-    void command (const char *cmd) override;
     virtual ~WidgetBluetooth ();
+    void command (const char *cmd) override;
     bool set_icon (void);
 };
 
