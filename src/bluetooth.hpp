@@ -41,14 +41,13 @@ class WidgetBluetooth : public PanelWidget
     BluetoothPlugin *bt;
 
     std::unique_ptr <Gtk::Button> plugin;
-    sigc::connection icon_timer;
 
   public:
 
-    void init (Gtk::HBox *container) override;
+    void widget_init (Gtk::HBox *container) override;
     virtual ~WidgetBluetooth ();
-    void command (const char *cmd) override;
-    bool set_icon (void);
+    void widget_command (const char *cmd) override;
+    void widget_set_icon (void);
 };
 
 #endif /* end of include guard: WIDGETS_BLUETOOTH_HPP */

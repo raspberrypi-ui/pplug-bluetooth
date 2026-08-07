@@ -37,18 +37,17 @@ extern "C" {
     const char *package_name (void) { return GETTEXT_PACKAGE; };
 }
 
-void WidgetBluetooth::command (const char *cmd)
+void WidgetBluetooth::widget_command (const char *cmd)
 {
     bt_control_msg (bt, cmd);
 }
 
-bool WidgetBluetooth::set_icon (void)
+void WidgetBluetooth::widget_set_icon (void)
 {
     bt_update_display (bt);
-    return false;
 }
 
-void WidgetBluetooth::init (Gtk::HBox *container)
+void WidgetBluetooth::widget_init (Gtk::HBox *container)
 {
     /* Create the button */
     plugin = std::make_unique <Gtk::Button> ();
@@ -58,7 +57,6 @@ void WidgetBluetooth::init (Gtk::HBox *container)
     /* Setup structure */
     bt = g_new0 (BluetoothPlugin, 1);
     bt->plugin = (GtkWidget *)((*plugin).gobj());
-    icon_timer = Glib::signal_idle().connect (sigc::mem_fun (*this, &WidgetBluetooth::set_icon));
 
     /* Initialise the plugin */
     bt_init (bt);
@@ -66,7 +64,6 @@ void WidgetBluetooth::init (Gtk::HBox *container)
 
 WidgetBluetooth::~WidgetBluetooth()
 {
-    icon_timer.disconnect ();
     bt_destructor (bt);
 }
 
