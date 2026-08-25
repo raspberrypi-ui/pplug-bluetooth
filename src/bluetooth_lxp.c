@@ -1,5 +1,5 @@
 /*============================================================================
-Copyright (c) 2024 Raspberry Pi
+Copyright (c) 2018-2025 Raspberry Pi
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -25,32 +25,60 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ============================================================================*/
 
-#ifndef WIDGETS_BLUETOOTH_HPP
-#define WIDGETS_BLUETOOTH_HPP
+#include <locale.h>
+#include <glib/gi18n.h>
 
-#include <widget.hpp>
-#include <gtkmm/button.h>
+#include "lxutils.h"
 
-extern "C" {
-#include "plugin.h"
 #include "bluetooth.h"
+
+/*----------------------------------------------------------------------------*/
+/* LXPanel plugin functions                                                   */
+/*----------------------------------------------------------------------------*/
+
+/* Constructor */
+static GtkWidget *bluetooth_constructor (LXPanel *panel, config_setting_t *settings)
+{
+    /* Allocate and initialize plugin context */
+    BluetoothPlugin *bt = g_new0 (BluetoothPlugin, 1);
+
+    /* Allocate top level widget and set into plugin widget pointer */
+    bt->panel = panel;
+    bt->settings = settings;
+    bt->plugin = gtk_button_new ();
+    lxpanel_plugin_set_data (bt->plugin, bt, bt_destructor);
+
+    bt_init (bt);
+
+    return bt->plugin;
 }
 
-class WidgetBluetooth : public PanelWidget
+/* Handler for system config changed message from panel */
+static void bluetooth_configuration_changed (LXPanel *, GtkWidget *plugin)
 {
-    BluetoothPlugin *bt;
+    BluetoothPlugin *bt = lxpanel_plugin_get_data (plugin);
+    bt_update_display (bt);
+}
 
-    std::unique_ptr <Gtk::Button> plugin;
+/* Handler for control message */
+static gboolean bluetooth_control (GtkWidget *plugin, const char *cmd)
+{
+    BluetoothPlugin *bt = lxpanel_plugin_get_data (plugin);
+    return bt_control_msg (bt, cmd);
+}
 
-  public:
+int module_lxpanel_gtk_version = 1;
+char module_name[] = PLUGIN_NAME;
 
-    void widget_init (Gtk::HBox *container) override;
-    virtual ~WidgetBluetooth ();
-    void widget_command (const char *cmd) override;
-    void widget_set_icon (void);
+/* Plugin descriptor */
+LXPanelPluginInit fm_module_init_lxpanel_gtk = {
+    .name = PLUGIN_TITLE,
+    .description = N_("Manages Bluetooth devices"),
+    .new_instance = bluetooth_constructor,
+    .reconfigure = bluetooth_configuration_changed,
+    .control = bluetooth_control,
+    .gettext_package = GETTEXT_PACKAGE
 };
-
-#endif /* end of include guard: WIDGETS_BLUETOOTH_HPP */
 
 /* End of file */
 /*----------------------------------------------------------------------------*/

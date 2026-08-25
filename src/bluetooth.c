@@ -28,11 +28,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <locale.h>
 #include <glib/gi18n.h>
 
-#ifdef LXPLUG
 #include "plugin.h"
-#else
-#include "lxutils.h"
-#endif
 
 #include "bluetooth.h"
 
@@ -2160,10 +2156,8 @@ void bt_init (BluetoothPlugin *bt)
 
     /* Set up button */
     gtk_button_set_relief (GTK_BUTTON (bt->plugin), GTK_RELIEF_NONE);
-#ifndef LXPLUG
     g_signal_connect (bt->plugin, "clicked", G_CALLBACK (bluetooth_button_clicked), bt);
-    bt->gesture = add_long_press (bt->plugin, NULL, NULL);
-#endif
+    wrap_add_longpress (bt->gesture, bt->plugin, NULL, NULL);
 
     /* Set up variables */
     bt->pair_list = gtk_list_store_new (7, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_UINT, G_TYPE_UINT, G_TYPE_UINT, GDK_TYPE_PIXBUF, G_TYPE_STRING);
@@ -2204,78 +2198,13 @@ void bt_destructor (gpointer user_data)
 {
     BluetoothPlugin *bt = (BluetoothPlugin *) user_data;
 
-#ifndef LXPLUG
-    if (bt->gesture) g_object_unref (bt->gesture);
-#endif
+    wrap_free_gesture (bt->gesture);
 
     clear (bt);
     g_bus_unwatch_name (bt->watch);
 
     g_free (bt);
 }
-
-/*----------------------------------------------------------------------------*/
-/* LXPanel plugin functions                                                   */
-/*----------------------------------------------------------------------------*/
-#ifdef LXPLUG
-
-/* Constructor */
-static GtkWidget *bluetooth_constructor (LXPanel *panel, config_setting_t *settings)
-{
-    /* Allocate and initialize plugin context */
-    BluetoothPlugin *bt = g_new0 (BluetoothPlugin, 1);
-
-    /* Allocate top level widget and set into plugin widget pointer */
-    bt->panel = panel;
-    bt->settings = settings;
-    bt->plugin = gtk_button_new ();
-    lxpanel_plugin_set_data (bt->plugin, bt, bt_destructor);
-
-    bt_init (bt);
-
-    return bt->plugin;
-}
-
-/* Handler for button press */
-static gboolean bluetooth_button_press_event (GtkWidget *plugin, GdkEventButton *event, LXPanel *)
-{
-    BluetoothPlugin *bt = lxpanel_plugin_get_data (plugin);
-    if (event->button == 1)
-    {
-        bluetooth_button_clicked (plugin, bt);
-        return TRUE;
-    }
-    else return FALSE;
-}
-
-/* Handler for system config changed message from panel */
-static void bluetooth_configuration_changed (LXPanel *, GtkWidget *plugin)
-{
-    BluetoothPlugin *bt = lxpanel_plugin_get_data (plugin);
-    bt_update_display (bt);
-}
-
-/* Handler for control message */
-static gboolean bluetooth_control (GtkWidget *plugin, const char *cmd)
-{
-    BluetoothPlugin *bt = lxpanel_plugin_get_data (plugin);
-    return bt_control_msg (bt, cmd);
-}
-
-int module_lxpanel_gtk_version = 1;
-char module_name[] = PLUGIN_NAME;
-
-/* Plugin descriptor */
-LXPanelPluginInit fm_module_init_lxpanel_gtk = {
-    .name = PLUGIN_TITLE,
-    .description = N_("Manages Bluetooth devices"),
-    .new_instance = bluetooth_constructor,
-    .reconfigure = bluetooth_configuration_changed,
-    .button_press_event = bluetooth_button_press_event,
-    .control = bluetooth_control,
-    .gettext_package = GETTEXT_PACKAGE
-};
-#endif
 
 /* End of file */
 /*----------------------------------------------------------------------------*/
