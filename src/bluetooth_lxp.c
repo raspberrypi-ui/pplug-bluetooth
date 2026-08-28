@@ -73,11 +73,11 @@ char module_name[] = PLUGIN_NAME;
 /* Plugin descriptor */
 LXPanelPluginInit fm_module_init_lxpanel_gtk = {
     .name = PLUGIN_TITLE,
+    .gettext_package = GETTEXT_PACKAGE,
     .description = N_("Manages Bluetooth devices"),
     .new_instance = bluetooth_constructor,
     .reconfigure = bluetooth_configuration_changed,
-    .control = bluetooth_control,
-    .gettext_package = GETTEXT_PACKAGE
+    .control = bluetooth_control
 };
 
 /* End of file */
