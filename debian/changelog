@@ -1,3 +1,9 @@
+pplug-bluetooth (1.12) trixie; urgency=medium
+
+  * Modify for new lxpanel shims
+
+ -- Simon Long <simon@raspberrypi.com>  Fri, 28 Aug 2026 10:45:07 +0100
+
 pplug-bluetooth (1.11) trixie; urgency=medium
 
   * Modify for latest plugin architecture
