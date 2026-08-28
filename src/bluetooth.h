@@ -36,14 +36,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 typedef struct 
 {
     GtkWidget *plugin;
-
-#ifdef LXPLUG
-    LXPanel *panel;                 /* Back pointer to panel */
-    config_setting_t *settings;     /* Plugin settings */
-#else
     GtkGesture *gesture;
-#endif
-
     GtkWidget *tray_icon;           /* Displayed image */
     GtkWidget *menu;                /* Popup menu */
     GtkListStore *pair_list;
@@ -73,6 +66,7 @@ typedef struct
     guint watch;
     gboolean rfkill;
     gboolean wizard;
+    LXPLUG_VARS
 } BluetoothPlugin;
 
 extern conf_table_t conf_table[1];
