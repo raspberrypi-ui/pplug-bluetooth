@@ -1,3 +1,9 @@
+pplug-bluetooth (1.13) trixie; urgency=medium
+
+  * Add Georgian translation
+
+ -- Simon Long <simon@raspberrypi.com>  Tue, 01 Sep 2026 09:43:38 +0100
+
 pplug-bluetooth (1.12) trixie; urgency=medium
 
   * Modify for new lxpanel shims

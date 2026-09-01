@@ -37,14 +37,14 @@ extern "C" {
     const char *package_name (void) { return GETTEXT_PACKAGE; };
 }
 
-void WidgetBluetooth::widget_command (const char *cmd)
-{
-    bt_control_msg (bt, cmd);
-}
-
 void WidgetBluetooth::widget_set_icon (void)
 {
     bt_update_display (bt);
+}
+
+void WidgetBluetooth::widget_command (const char *cmd)
+{
+    bt_control_msg (bt, cmd);
 }
 
 void WidgetBluetooth::widget_init (Gtk::HBox *container)

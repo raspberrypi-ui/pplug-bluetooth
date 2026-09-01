@@ -46,8 +46,8 @@ class WidgetBluetooth : public PanelWidget
 
     void widget_init (Gtk::HBox *container) override;
     virtual ~WidgetBluetooth ();
-    void widget_command (const char *cmd) override;
     void widget_set_icon (void);
+    void widget_command (const char *cmd) override;
 };
 
 #endif /* end of include guard: WIDGETS_BLUETOOTH_HPP */
