@@ -1,0 +1,251 @@
+# Georgian translation for lpplug_bluetooth.
+# Copyright (C) 2026 lpplug_bluetooth's authors.
+# This file is distributed under the same license as the lpplug_bluetooth package.
+# Ekaterine Papava <papava.e@gtu.ge>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: lpplug_bluetooth\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-26 09:19+0100\n"
+"PO-Revision-Date: 2026-08-30 05:13+0200\n"
+"Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
+"Language-Team: Georgian <(nothing)>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+
+#: src/bluetooth.c:1306
+#, c-format
+msgid "Pairing request sent to '%s' - waiting for response..."
+msgstr "დაწყვილების მოთხოვნა გაგზავნილია '%s'-ზე - პასუხის მოლოდინი..."
+
+#: src/bluetooth.c:1315
+#, c-format
+msgid "Pairing failed - %s"
+msgstr "დაწყვილება ჩავარდა - %s"
+
+#: src/bluetooth.c:1323
+#, c-format
+msgid "Pairing successful - connecting..."
+msgstr "დაწყვილება წარმატებულია - დაკავშირება..."
+
+#: src/bluetooth.c:1331
+#, c-format
+msgid "Connection successful"
+msgstr "კავშირი წარმატებულია"
+
+#: src/bluetooth.c:1339 src/bluetooth.c:1602
+#, c-format
+msgid "Connection failed - %s"
+msgstr "კავშირი ჩავარდა - %s"
+
+#: src/bluetooth.c:1347
+#, c-format
+msgid "Please enter code '%s' on '%s'"
+msgstr "შეიყვანეთ კოდი '%s' მოწყობილობაზე '%s'"
+
+#: src/bluetooth.c:1355
+#, c-format
+msgid "Please confirm that '%s' is showing the code '%s' to pair"
+msgstr "დაადასტურეთ, რომ '%s' აჩვენებს კოდს '%s' დასაწყვილებლად"
+
+#: src/bluetooth.c:1363
+#, c-format
+msgid "Please enter PIN code shown on '%s'"
+msgstr "შეიყვანეთ '%s'-ზე ნაჩვენები PIN-კოდი"
+
+#: src/bluetooth.c:1371
+#, c-format
+msgid "Please enter passcode shown on '%s'"
+msgstr "შეიყვანეთ '%s'-ზე ნაჩვენები პაროლი"
+
+#: src/bluetooth.c:1379
+#, c-format
+msgid "Waiting for response from Bluetooth device..."
+msgstr "ბლუთუზის მოწყობილობიდან პასუხის მოლოდინი...."
+
+#: src/bluetooth.c:1387
+#, c-format
+msgid "'%s' has requested a pairing. Do you accept the request?"
+msgstr "'%s'-მა დაწყვილება მოითხოვა. ეთანხმებით ამ მოთხოვნას?"
+
+#: src/bluetooth.c:1395
+#, c-format
+msgid ""
+"Pairing successful - right-click the volume icon to select as audio device"
+msgstr ""
+"დაწყვილება წარმატებულია - მარჯვენა წკაპი ხმის ხატულაზე მის "
+"აუდიომოწყობილობად ასარჩევად"
+
+#: src/bluetooth.c:1403
+#, c-format
+msgid ""
+"Pairing successful - this device has no services which can be used with "
+"Raspberry Pi"
+msgstr ""
+"დაწყვილება წარმატებულია - ამ მოწყობილობას სერვისი, რომლიც გამოყენებაც "
+"Raspberry Pi-ზე შეიძლება, არ გააჩნია"
+
+#: src/bluetooth.c:1582
+#, c-format
+msgid "Removing..."
+msgstr "მიმდინარეობს წაშლა…"
+
+#: src/bluetooth.c:1586
+#, c-format
+msgid "Do you want to unpair '%s'?"
+msgstr "გნებავთ '%s'-სთან დაწყვილების გაუქმება?"
+
+#: src/bluetooth.c:1589
+#, c-format
+msgid "Removing pairing with '%s'..."
+msgstr "'%s'-სთან დაწყვილების მოცილება..."
+
+#: src/bluetooth.c:1592
+#, c-format
+msgid "Removal failed - %s"
+msgstr "წაშლა ჩავარდა - %s"
+
+#: src/bluetooth.c:1601
+#, c-format
+msgid "Connecting..."
+msgstr "დაკავშირება..."
+
+#: src/bluetooth.c:1602
+#, c-format
+msgid "Connecting to '%s'..."
+msgstr "'%s'-სთან დაკავშირება..."
+
+#: src/bluetooth.c:1606
+#, c-format
+msgid "Disconnecting..."
+msgstr "კავშირის გაწყვეტა..."
+
+#: src/bluetooth.c:1607
+#, c-format
+msgid "Disconnecting from '%s'..."
+msgstr "'%s'-დან გათიშვა..."
+
+#: src/bluetooth.c:1607
+#, c-format
+msgid "Disconnection failed - %s"
+msgstr "გათიშვა ჩავარდა - %s"
+
+#: src/bluetooth.c:1722
+msgid "No usable services on this device"
+msgstr "ამ მოწყობილობაზე გამოყენებადი სერვისები აღმოჩენილი არაა"
+
+#: src/bluetooth.c:1787
+msgid "Disconnect..."
+msgstr "გათიშვა..."
+
+#: src/bluetooth.c:1792
+msgid "Connect..."
+msgstr "დაკავშირება..."
+
+#. add the remove option to the submenu
+#: src/bluetooth.c:1805
+msgid "Remove..."
+msgstr "წაშლა..."
+
+#. warn if no BT hardware detected
+#: src/bluetooth.c:2001
+msgid "No Bluetooth adapter found"
+msgstr "ბლუთუზის ადაპტერი აღმოჩენილი არაა"
+
+#. add enable bt option
+#: src/bluetooth.c:2008
+msgid "Turn On Bluetooth"
+msgstr "ბლუთუზის ჩართვა"
+
+#. add disable bt option
+#: src/bluetooth.c:2018
+msgid "Turn Off Bluetooth"
+msgstr "ბლუთუზის გამორთვა"
+
+#: src/bluetooth.c:2028
+msgid "Stop Discoverable"
+msgstr "აღმოჩენადობის გაჩერება"
+
+#: src/bluetooth.c:2030
+msgid "Make Discoverable"
+msgstr "აღმოჩენადი"
+
+#. add and remove dialogs
+#: src/bluetooth.c:2038
+msgid "Add Device..."
+msgstr "მოწყობილობის დამატება..."
+
+#: src/bluetooth.c:2159
+msgid "Manage Bluetooth devices"
+msgstr "ბლუთუზის მოწყობილობის მართვა"
+
+#: src/bluetooth.c:2266
+msgid "Manages Bluetooth devices"
+msgstr "ბლუთუზის მოწყობილობის მართვა"
+
+#. End of file
+#. ----------------------------------------------------------------------------
+#. ============================================================================
+#. Copyright (c) 2018-2025 Raspberry Pi
+#. All rights reserved.
+#.
+#. Redistribution and use in source and binary forms, with or without
+#. modification, are permitted provided that the following conditions are met:
+#. * Redistributions of source code must retain the above copyright
+#. notice, this list of conditions and the following disclaimer.
+#. * Redistributions in binary form must reproduce the above copyright
+#. notice, this list of conditions and the following disclaimer in the
+#. documentation and/or other materials provided with the distribution.
+#. * Neither the name of the copyright holder nor the
+#. names of its contributors may be used to endorse or promote products
+#. derived from this software without specific prior written permission.
+#.
+#. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+#. ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+#. WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+#. DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY
+#. DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+#. (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+#. LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+#. ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+#. (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+#. SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#. ============================================================================
+#. ----------------------------------------------------------------------------
+#. Typedefs and macros
+#. ----------------------------------------------------------------------------
+#: src/bluetooth.h:32
+msgid "Bluetooth"
+msgstr "ბლუთუზი"
+
+#: data/lxplug-bluetooth.ui:8
+msgid "Add New Device"
+msgstr "ახალი მოწყობილობის დამატება"
+
+#: data/lxplug-bluetooth.ui:23 data/lxplug-bluetooth.ui:155
+msgid "_Cancel"
+msgstr "გაუ_ქმება"
+
+#: data/lxplug-bluetooth.ui:37
+msgid "_Pair"
+msgstr "_დაწყვილება"
+
+#: data/lxplug-bluetooth.ui:60
+msgid "Searching for Bluetooth devices..."
+msgstr "ბლუთუზის მოწყობილობების ძებნა..."
+
+#: data/lxplug-bluetooth.ui:128
+msgid "label"
+msgstr "ჭდე"
+
+#: data/lxplug-bluetooth.ui:170
+msgid "_OK"
+msgstr "_დიახ"
+
+#: data/lxplug-bluetooth.ui:194
+msgid "Pairing..."
+msgstr "დაწყვილება..."
