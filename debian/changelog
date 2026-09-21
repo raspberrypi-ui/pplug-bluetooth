@@ -1,3 +1,9 @@
+pplug-bluetooth (1.15) trixie; urgency=medium
+
+  * Add tooltip for widget browser
+
+ -- Simon Long <simon@raspberrypi.com>  Mon, 21 Sep 2026 09:43:14 +0100
+
 pplug-bluetooth (1.14) trixie; urgency=medium
 
   * Version bump for build

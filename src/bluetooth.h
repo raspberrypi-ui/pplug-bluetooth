@@ -30,6 +30,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /*----------------------------------------------------------------------------*/
 
 #define PLUGIN_TITLE N_("Bluetooth")
+#define PLUGIN_DESC N_("Manages Bluetooth devices")
 
 #define ICON_CACHE_SIZE 14
 
